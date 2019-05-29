@@ -1,0 +1,35 @@
+cd blog
+php artisan serve
+
+php artisan make:auth
+php artisan migrate
+
+
+npm run dev
+npm run watch
+
+php artisan make:controller Admin/ArtigosController --resource
+php artisan make:model Artigo -m
+php artisan migrate
+
+php artisan make:controller Admin/UsuariosController --resource
+
+php artisan make:migration add_autor_table_users --table=users
+
+php artisan migrate:status
+php artisan migrate
+
+php artisan make:controller Admin/AutoresController --resource
+- edita funções do Controller index, stores, update (app/Http/Controllers)
+- duplica view usuarios (resources/views) 
+- acrescenta rota (routes/web.php)
+
+php artisan make:migration add_user_id_table_artigos --table=artigos
+faz o up, dps desfaz em down
+
+
+CRUD
+- Controle (app/http/controllers/admin)
+php artisan make:migration add_admin_table_users --table=users
+php artisan migrate
+
